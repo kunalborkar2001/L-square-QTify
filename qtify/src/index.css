@@ -8,6 +8,9 @@
 html, body, h1, h2, h3, p, ul, ol, li, dl, dt, dd, blockquote, figure, fieldset, legend {
   margin: 0;
   padding: 0;
+  background: var(--css-black);
+  color: var(--css-white);
+  font-family: Poppins;
 }
 
 /* Remove default list styles */
