@@ -1,3 +1,9 @@
+:root {
+  --css-primary: #34c94b;
+  --css-black : #121212;
+  --css-white : #fff;
+}
+
 /* Reset some default browser styles */
 html, body, h1, h2, h3, p, ul, ol, li, dl, dt, dd, blockquote, figure, fieldset, legend {
   margin: 0;
