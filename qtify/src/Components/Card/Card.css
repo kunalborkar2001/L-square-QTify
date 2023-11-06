@@ -1,0 +1,30 @@
+.card {
+    width: 159px;
+    /* height: 205px; */
+    border-radius: 10px 10px 0 0 ;
+    overflow: hidden;
+    margin-left: 40px;
+    margin-right: 40px;
+    background: var(--css-white);
+    border-radius: 10px;
+}
+
+.card img {
+    height: 170px;
+    width: 100%;
+    
+}
+.followers {
+    background: white;
+    text-align: center;
+    width: 70%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 3px;
+}
+
+.catagory{
+    position: absolute;
+    
+}
+
