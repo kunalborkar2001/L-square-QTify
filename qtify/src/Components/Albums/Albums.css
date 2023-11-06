@@ -1,0 +1,12 @@
+.albums {
+    height: 848px;
+    border: solid yellow;
+    padding: 40px;
+}
+
+
+
+.collapse {
+    color: var(--css-primary);
+
+}

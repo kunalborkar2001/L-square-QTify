@@ -1,19 +1,25 @@
 .card {
-    width: 159px;
+    width: 70%; /* Set to a percentage value */
     /* height: 205px; */
-    border-radius: 10px 10px 0 0 ;
+    border-radius: 10px 10px 0 0;
     overflow: hidden;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 1%; /* Set to a percentage value */
     background: var(--css-white);
     border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width:100%; /* Adjust the width for smaller screens */
+        margin-left: 2%; /* Adjust the margin for smaller screens */
+    }
 }
 
 .card img {
     height: 170px;
     width: 100%;
-    
 }
+
 .followers {
     background: white;
     text-align: center;
@@ -23,8 +29,6 @@
     margin: 3px;
 }
 
-.catagory{
+.catagory {
     position: absolute;
-    
 }
-

@@ -1,0 +1,5 @@
+.parent {
+  .parent {
+    max-width: 100%; /* Ensure the slider takes the full available width */
+  }
+}

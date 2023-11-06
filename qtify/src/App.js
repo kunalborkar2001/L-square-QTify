@@ -1,17 +1,14 @@
-
-
 import './App.css';
-import Card from './Components/Card/Card';
 import HeroImage from './Components/HeroImage/HeroImage';
 import Navbar from './Components/Navbar/Navbar';
+import Albums from './Components/Albums/Albums';
 
 function App() {
   return (
    <div>
     <Navbar />
     <HeroImage />
-    <Card />
-  
+    <Albums />
    </div>
   );
 }
