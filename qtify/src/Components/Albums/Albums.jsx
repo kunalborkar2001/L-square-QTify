@@ -6,8 +6,8 @@ import TopAlbums from './OneAlbum/OneAlbums'
 const Albums = () => {
   return (
     <div className='albums'>
-      <TopAlbums />
-      <TopAlbums />
+      <TopAlbums title = {"Top Albums"}/>
+      <TopAlbums title = {"New Albums"}/>
       
     </div>
   )

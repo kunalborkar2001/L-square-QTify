@@ -2,11 +2,11 @@ import React from 'react'
 import './OneAlbums.css'
 import Slider from '../../Slider/Slider'
 
-const TopAlbums = () => {
+const TopAlbums = (props) => {
   return (
     <div className='onealbum'>
         <div className='tophead'>
-        <p>Top Albums</p>
+        <p>{props.title}</p>
         <p className='collapse'>Collapse</p>
       </div>
       <div className='topalbums'>
