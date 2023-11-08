@@ -1,7 +1,5 @@
-
-import "./FilteredSongs.css"
-
 import * as React from 'react';
+import "./FilteredSongs.css"
 import { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
@@ -9,9 +7,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Slider from "../../Slider/Slider";
-import Card from "../../Card/Card";
 import { songs } from "../../../API Calls/ApiCalls";
-
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -47,9 +43,14 @@ function a11yProps(index) {
 }
 
 let FilteredSongs = () => {
-
   const [albums, setAlbums] = useState([]);
-  
+  const [value, setValue] = React.useState(0);
+  const [categoryData, setCategoryData] = useState({
+    rock: null,
+    pop: null,
+    blues: null,
+    razz: null,
+  });
 
   useEffect(() => {
     // Fetch top albums when the component mounts
@@ -57,7 +58,6 @@ let FilteredSongs = () => {
       try {
         const data = await songs();
         setAlbums(data);
-        // console.log(data);
       } catch (error) {
         console.error('Error fetching top albums:', error);
       }
@@ -66,10 +66,22 @@ let FilteredSongs = () => {
     fetchTopAlbums();
   }, []); // The empty dependency array ensures that this effect runs only once
 
+  useEffect(() => {
+    if (albums.length > 0) {
+      categorizeAlbums(albums);
+    }
+  }, [albums]);
 
+  const categorizeAlbums = (allSongs) => {
+    const categorizedData = {
+      rock: allSongs.filter((elem) => elem.genre.key === "rock"),
+      pop: allSongs.filter((elem) => elem.genre.key === "pop"),
+      blues: allSongs.filter((elem) => elem.genre.key === "blues"),
+      jazz: allSongs.filter((elem) => elem.genre.key === "jazz"),
+    };
 
-
-  const [value, setValue] = React.useState(0);
+    setCategoryData(categorizedData);
+  }
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -90,19 +102,19 @@ let FilteredSongs = () => {
         <Slider data={albums} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <Slider />
+        <Slider data={categoryData.rock} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <Slider />
+        <Slider data={categoryData.pop} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <Slider />
+        <Slider data={categoryData.jazz} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        <Slider />
+        <Slider data={categoryData.blues} />
       </CustomTabPanel>
     </Box>
   );
 }
 
-export default FilteredSongs
+export default FilteredSongs;
