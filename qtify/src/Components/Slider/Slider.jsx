@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Card from '../Card/Card';
@@ -23,24 +23,20 @@ const responsive = {
   },
 };
 
-const Slider = () => {
+const Slider = (props) => {
+  console.error = () => { };
+
+
   return (
     <div className="parent">
-      <Carousel
-        responsive={responsive}
-        infinite={true}
-        showDots={false}
-      >
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-     
-       
+      <Carousel responsive={responsive} infinite={true} showDots={false}>
+        {Array.isArray(props.data) && props.data.length > 0 ? (
+          props.data.map((elem, index) => (
+            <Card key={elem.id} title={elem.title} image={elem.image} follows={elem.follows}/>
+          ))
+        ) : (
+          <div>No data available</div>
+        )}
       </Carousel>
     </div>
   );
