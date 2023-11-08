@@ -4,15 +4,19 @@ import Logo from "../../Images/Logo"
 
 const Card = (props) => {
   return (
-      <div>
+    <div>
       <div className='card'>
-      <img src={props.image} alt={<Logo />}   />
+        <img src={props.image} alt={<Logo />} />
         <div className='followers'>
-          <p>{props.follows} Follows</p>
+          {props.follows ? (
+            <p>{props.follows} Follows</p>
+          ) : (
+            <p>{props.likes} Likes</p>
+          )}
         </div>
       </div>
-        <p className="category">{props.title}</p>
-      </div>
+      <p className="category">{props.title}</p>
+    </div>
   )
 }
 
