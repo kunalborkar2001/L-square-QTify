@@ -9,3 +9,17 @@
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
     color: var(--css-secondary) !important;
 }
+
+.css-1q2h7u5 {
+    color: var(--css-white) !important;
+}
+
+
+.css-1q2h7u5.Mui-selected {
+    color: var(--css-primary) !important;
+}
+
+.css-ttwr4n {
+    background-color: var(--css-primary) !important;
+}
+
