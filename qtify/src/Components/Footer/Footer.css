@@ -43,4 +43,8 @@
     background-color: #000 !important;
 }
 
-
+.css-3vmltg {
+    color: var(--css-primary);
+    height: 30px;
+    width: 30px;
+}
