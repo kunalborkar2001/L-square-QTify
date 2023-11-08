@@ -11,7 +11,6 @@ const Card = (props) => {
         </div>
       </div>
         <p className="category">{props.title}</p>
-
       </div>
   )
 }

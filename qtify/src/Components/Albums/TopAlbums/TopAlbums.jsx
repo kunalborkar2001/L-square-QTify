@@ -1,5 +1,3 @@
-import React from 'react'
-
 import './TopAlbums.css'
 import Slider from '../../Slider/Slider'
 import { topAlbums } from '../../../API Calls/ApiCalls'
