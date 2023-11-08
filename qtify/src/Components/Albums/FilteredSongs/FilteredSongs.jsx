@@ -2,6 +2,7 @@
 import "./FilteredSongs.css"
 
 import * as React from 'react';
+import { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -9,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Slider from "../../Slider/Slider";
 import Card from "../../Card/Card";
+import { songs } from "../../../API Calls/ApiCalls";
 
 
 function CustomTabPanel(props) {
@@ -44,7 +46,29 @@ function a11yProps(index) {
   };
 }
 
-let  FilteredSongs = () => {
+let FilteredSongs = () => {
+
+  const [albums, setAlbums] = useState([]);
+  
+
+  useEffect(() => {
+    // Fetch top albums when the component mounts
+    const fetchTopAlbums = async () => {
+      try {
+        const data = await songs();
+        setAlbums(data);
+        // console.log(data);
+      } catch (error) {
+        console.error('Error fetching top albums:', error);
+      }
+    };
+
+    fetchTopAlbums();
+  }, []); // The empty dependency array ensures that this effect runs only once
+
+
+
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -55,7 +79,7 @@ let  FilteredSongs = () => {
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab  label="All" {...a11yProps(0)} />
+          <Tab label="All" {...a11yProps(0)} />
           <Tab label="Rock" {...a11yProps(1)} />
           <Tab label="Pop" {...a11yProps(2)} />
           <Tab label="Jazz" {...a11yProps(3)} />
@@ -63,19 +87,19 @@ let  FilteredSongs = () => {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <Slider />
+        <Slider data={albums} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <Card />
+        <Slider />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        index 2
+        <Slider />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        index 3
+        <Slider />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        index 4
+        <Slider />
       </CustomTabPanel>
     </Box>
   );

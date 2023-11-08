@@ -1,13 +1,14 @@
 import React from 'react'
 import './Card.css'
+import Logo from "../../Images/Logo"
 
 const Card = (props) => {
   return (
       <div>
       <div className='card'>
-        <img src={props.image} alt="Image Not Found" />
+      <img src={props.image} alt={<Logo />}   />
         <div className='followers'>
-          <p>{props.follows}</p>
+          <p>{props.follows} Follows</p>
         </div>
       </div>
         <p className="category">{props.title}</p>

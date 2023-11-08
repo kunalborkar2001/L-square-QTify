@@ -27,3 +27,16 @@ export const newAlbums = async() => {
     }
 }
 
+export const songs= async() => {
+    
+    try {
+        const response = await axios.get("https://qtify-backend-labs.crio.do/songs")
+        const data = await response.data
+        return data
+
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
