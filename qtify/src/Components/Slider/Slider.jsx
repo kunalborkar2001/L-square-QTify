@@ -38,6 +38,9 @@ const Slider = () => {
         <Card />
         <Card />
         <Card />
+        <Card />
+     
+       
       </Carousel>
     </div>
   );
