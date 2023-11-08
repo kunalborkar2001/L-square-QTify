@@ -29,9 +29,16 @@
     color: var(--css-black);
 }
 
+
 .css-v84d5j-MuiSvgIcon-root {
     color: var(--css-primary);
     width: 30px !important;
     height: 30px !important ;
     
+}
+
+
+.css-78njj9 {
+    border-radius: 12px !important;
+    background-color: #000 !important;
 }
