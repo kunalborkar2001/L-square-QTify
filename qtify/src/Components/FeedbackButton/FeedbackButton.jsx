@@ -1,5 +1,5 @@
 import React from 'react'
-import './Feedback.css'
+import './FeedbackButton.css'
 
 const Feedback = () => {
   return (

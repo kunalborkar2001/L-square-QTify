@@ -9,8 +9,11 @@
 
 .logo {
     margin-left: 3vw;
+    cursor: pointer;
 }
 
 
 
-
+.collapse {
+    cursor: pointer;
+}

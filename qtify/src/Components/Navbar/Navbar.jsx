@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Navbar.css"
 import Searchbar from '../Searchbar/Searchbar'
-import Feedback from '../Feedback/Feedback'
+import Feedback from '../FeedbackButton/FeedbackButton'
 import Logo from '../../Images/Logo'
 
 const Navbar = () => {
