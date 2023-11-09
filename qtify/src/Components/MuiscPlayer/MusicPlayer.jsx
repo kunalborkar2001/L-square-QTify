@@ -33,6 +33,11 @@ const MusicPlayer = () => {
     const audioRef = useRef(null);
 
     useEffect(() => {
+        // Trigger play when component mounts
+        if (audioRef.current && !paused) {
+            audioRef.current.play();
+        }
+
         if (audioRef.current) {
             audioRef.current.addEventListener('timeupdate', () => {
                 setPosition(audioRef.current.currentTime);
