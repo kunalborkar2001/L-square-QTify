@@ -40,3 +40,17 @@ export const songs= async() => {
     }
 }
 
+
+export const currentAlbum= async(slug) => {
+    
+    try {
+        const response = await axios.get(`https://qtify-backend-labs.crio.do/album/${slug}`)
+        const data = await response.data
+        return data
+
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+

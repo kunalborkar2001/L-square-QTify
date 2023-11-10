@@ -33,7 +33,7 @@ const Slider = (props) => {
       <Carousel responsive={responsive} infinite={true} showDots={false}>
         {Array.isArray(props.data) && props.data.length > 0 ? (
           props.data.map((elem, index) => (
-            <Card key={elem.id} title={elem.title} image={elem.image} follows={elem.follows} likes={elem.likes} totalSongs={elem.songs ? elem.songs.length : elem.artists}/>
+            <Card key={elem.id} slug={elem.slug} title={elem.title} image={elem.image} follows={elem.follows} likes={elem.likes} totalSongs={elem.songs ? elem.songs.length : elem.artists} />
           ))
         ) : (
           <div>No data available</div>

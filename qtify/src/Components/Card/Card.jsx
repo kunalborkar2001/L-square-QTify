@@ -3,6 +3,7 @@ import './Card.css'
 import Logo from "../../Images/Logo"
 import Tooltip from '@mui/material/Tooltip';
 import Box from '@mui/material/Box';
+import { Link } from "react-router-dom";
 
 const Card = (props) => {
 
@@ -20,7 +21,6 @@ const Card = (props) => {
       popperRef.current.update();
     }
   };
-
 
   return (
     <div>
@@ -42,25 +42,46 @@ const Card = (props) => {
           },
         }}
       >
-        <Box
-        ref={areaRef}
-        onMouseMove={handleMouseMove}
-        >
-        <div className='card'>
-          <img src={props.image} alt={<Logo />} />
-          <div className='followers'>
-            {props.follows ? (
-              <p>{props.follows} Follows</p>
-            ) : (
-              <p>{props.likes} Likes</p>
-            )}
-          </div>
-        </div>
-        <p className="category">{props.title}</p>
-        </Box>
+        {props.slug ? ( // Check if props.slug is defined
+          <Link to={`/music/${props.slug}`}>
+            <Box
+              ref={areaRef}
+              onMouseMove={handleMouseMove}
+            >
+              <div className='card'>
+                <img src={props.image} alt={<Logo />} />
+                <div className='followers'>
+                  {props.follows ? (
+                    <p>{props.follows} Follows</p>
+                  ) : (
+                    <p>{props.likes} Likes</p>
+                  )}
+                </div>
+              </div>
+              <p className="category">{props.title}</p>
+            </Box>
+          </Link>
+        ) : (
+          <Box
+            ref={areaRef}
+            onMouseMove={handleMouseMove}
+          >
+            <div className='card'>
+              <img src={props.image} alt={<Logo />} />
+              <div className='followers'>
+                {props.follows ? (
+                  <p>{props.follows} Follows</p>
+                ) : (
+                  <p>{props.likes} Likes</p>
+                )}
+              </div>
+            </div>
+            <p className="category">{props.title}</p>
+          </Box>
+        )}
       </Tooltip>
     </div>
   )
 }
 
-export default Card
+export default Card;
