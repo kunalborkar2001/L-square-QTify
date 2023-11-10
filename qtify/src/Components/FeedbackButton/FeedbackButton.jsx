@@ -1,10 +1,12 @@
 import React from 'react'
 import './FeedbackButton.css'
 
-const Feedback = () => {
+const Feedback = ({ onFeedbackButtonClick }) => {
   return (
-    <div className='feedback'><h3>Give Feedback</h3></div>
-  )
+    <div className='feedback'>
+      <h3 onClick={onFeedbackButtonClick}>Give Feedback</h3>
+    </div>
+  );
 }
 
 export default Feedback

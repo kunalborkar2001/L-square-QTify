@@ -12,10 +12,10 @@
     /* padding: 10px 16px 10px 16px; */
     margin-right: 3vw;
     cursor: pointer;
- 
+
 }
 
-.feedback h3{
+.feedback h3 {
     font-family: Poppins;
     font-size: 15px;
     color: var(--css-primary);
@@ -26,9 +26,11 @@
 
 
 @media (max-width: 576px) {
+
     /* Styles for extra small screens */
     .feedback {
         display: none;
     }
-  }
-  
+}
+
+

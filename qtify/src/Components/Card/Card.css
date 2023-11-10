@@ -6,6 +6,7 @@
     margin-left: 1%; /* Set to a percentage value */
     background: var(--css-white);
     border-radius: 10px;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
