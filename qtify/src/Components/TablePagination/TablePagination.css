@@ -25,21 +25,21 @@
 }
 
 
-.css-1omp2b7.Mui-selected {
+.tablePagination .css-1omp2b7.Mui-selected {
     background: var(--css-primary);
     color: var(--css-black);
 }
 
-.css-1omp2b7.Mui-selected:hover {
+.tablePagination .css-1omp2b7.Mui-selected:hover {
     background: #34c94a !important;
     transform: scale(1.1);
 }
 
-.css-1omp2b7 {
+.tablePagination .css-1omp2b7 {
     color: var(--css-white);
 }
 
-.css-16y9h98 {
+.tablePagination .css-16y9h98 {
     color: var(--css-white);
 }
 
