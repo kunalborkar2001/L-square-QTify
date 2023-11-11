@@ -23,5 +23,13 @@ td {
   }
   
   .albumTable tr {
-    margin-bottom: 90px; /* Adjust the margin value as needed */
+    margin-bottom: 90px; 
+}
+
+
+@media (max-width: 682px) {
+
+    .albumTable {
+        margin: auto;
+    }
 }
