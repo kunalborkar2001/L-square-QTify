@@ -6,6 +6,7 @@ import AlbumTable from '../../Components/AlbumTable/AlbumTable';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import { Link } from "react-router-dom";
 import { currentAlbum } from '../../API Calls/ApiCalls';
+import MusicPlayer from "../../Components/MuiscPlayer/MusicPlayer"
 
 const CurrentAlbum = () => {
     const [albumData, setAlbumData] = useState({});
@@ -45,6 +46,8 @@ const CurrentAlbum = () => {
                 // Do something else
                 <img src="https://www.adorama.com/alc/wp-content/uploads/2021/05/bird-wings-flying.gif" alt="kunalborkar2001@gmail.com" />
             )}
+            
+            <MusicPlayer />
         </div>
     );
 }
